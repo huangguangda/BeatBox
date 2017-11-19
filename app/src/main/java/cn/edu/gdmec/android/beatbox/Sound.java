@@ -9,6 +9,9 @@ package cn.edu.gdmec.android.beatbox;
 public class Sound {
     private String mAssetPath;
     private String mName;
+    //添加变量,实例
+    private Integer mSoundId;
+
 
     public Sound(String assetPath){
         mAssetPath = assetPath;
@@ -21,5 +24,11 @@ public class Sound {
     }
     public String getName(){
         return mName;
+    }
+    public Integer getSoundId(){
+        return mSoundId;
+    }
+    public void setSoundId(Integer soundId){
+        mSoundId = soundId;
     }
 }

@@ -45,7 +45,8 @@ public class BeatBoxFragment extends Fragment{
         return view;
     }
 
-    private class SoundHolder extends RecyclerView.ViewHolder{
+    //添加点击按钮播放
+    private class SoundHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private Button mButton;
         //绑定sound
         private Sound mSound;
@@ -54,11 +55,18 @@ public class BeatBoxFragment extends Fragment{
             super(inflater.inflate ( R.layout.list_item_sound, container, false ));
 
             mButton = (Button)itemView.findViewById ( R.id.list_item_sound_button );
+            //添加点击按钮播放
+            mButton.setOnClickListener ( this );
         }
         //绑定sound
         public void bindSound(Sound sound){
             mSound = sound;
             mButton.setText(mSound.getName());
+        }
+        //添加点击按钮播放
+        @Override
+        public void onClick(View v){
+            mBeatBox.play ( mSound );
         }
     }
 
