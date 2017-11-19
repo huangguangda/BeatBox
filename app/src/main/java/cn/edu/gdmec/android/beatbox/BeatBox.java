@@ -45,6 +45,10 @@ public class BeatBox {
         }
         mSoundPool.play ( soundId, 1.0f, 1.0f, 1, 0, 1.0f );
     }
+    //释放音频
+    public void release(){
+        mSoundPool.release ();
+    }
 
     //实现一个方法，调用它给出声音文件清单
     private void loadSounds(){

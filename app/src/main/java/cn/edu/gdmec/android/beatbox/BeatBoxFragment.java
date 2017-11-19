@@ -27,6 +27,8 @@ public class BeatBoxFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate ( savedInstanceState );
+        //调用
+        setRetainInstance(true);
         mBeatBox = new BeatBox ( getActivity () );
     }
 
@@ -43,6 +45,11 @@ public class BeatBoxFragment extends Fragment{
         recyclerView.setAdapter ( new SoundAdapter ( mBeatBox.getSounds () ) );
 
         return view;
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
+        mBeatBox.release();
     }
 
     //添加点击按钮播放
