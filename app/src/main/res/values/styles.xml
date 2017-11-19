@@ -7,5 +7,9 @@
         <style name="BeatBoxButton">
             <item name="android:background">@color/dark_blue</item>
         </style>
+    <!--继承样式-->
+    <style name="BeatBoxButton.Strong">
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>
